@@ -15,26 +15,24 @@
     <div class="content">
         <h1>Bibliófilo's</h1>
 
-        <h2>Livros</h2>
+        <h2>Leitores</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $titulo = 'titulo';
-        $autor = 'autor';
-        $classificacao = 'classificacao';
-        $editora = 'editora';
+        $nome = 'nome';
+        $cidade = 'cidade';
+        $idade = 'idade';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $titulo .
-            '     , ' . $autor .
-            '     , ' . $classificacao .
-            '     , ' . $editora .
+            'SELECT ' . $nome .
+            '     , ' . $cidade .
+            '     , ' . $idade .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM livros';
+            '  FROM leitores';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -47,11 +45,10 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $titulo . '</th>' .
-            '        <th>' . $autor . '</th>' .
+            '        <th>' . $nome . '</th>' .
+            '        <th>' . $cidade . '</th>' .
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
-            '        <th>' . $classificacao . '</th>' .
-            '        <th>' . $editora . '</th>' .
+            '        <th>' . $idade . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -62,12 +59,10 @@
 
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
+                echo '<td>' . $registro[$nome] . '</td>' .
+                    '<td>' . $registro[$cidade] . '</td>' .
                     /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>'.
-
-                    '<td>' . $registro[$editora] . '</td>';
+                    '<td>' . $registro[$idade] . '</td>';
 
                 echo '</tr>';
             }
