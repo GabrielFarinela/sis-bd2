@@ -34,7 +34,7 @@
             '     , ' . $classificacao .
             '     , ' . $editora .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM livros';
+            '  FROM livro';
 
 
         $resultado = mysqli_query($conexao, $sql);

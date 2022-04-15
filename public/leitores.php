@@ -32,7 +32,7 @@
             '     , ' . $cidade .
             '     , ' . $idade .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM leitores';
+            '  FROM leitor';
 
 
         $resultado = mysqli_query($conexao, $sql);
