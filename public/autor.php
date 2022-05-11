@@ -15,23 +15,19 @@
     <div class="content">
         <h1>Bibliófilo's</h1>
 
-        <h2>Livros</h2>
+        <h2>Autores</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $titulo_livro = 'titulo_livro';
-        $editora = 'editora';
-        $data_lancamento = 'classificacao';
+        $nome_autor = 'nome_autor';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $titulo_livro .
-            '     , ' . $editora .
-            '     , ' . $data_lancamento .
-            '  FROM livros';
+            'SELECT ' . $nome_autor .
+            '  FROM autor';
             /*TODO-2: Adicione cada variavel a consulta abaixo */
 
 
@@ -45,9 +41,7 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $titulo_livro . '</th>' .
-            '        <th>' . $editora . '</th>' .
-            '        <th>' . $data_lancamento . '</th>' .
+            '        <th>' . $nome_autor . '</th>' .
             '    </tr>';
             /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
             
@@ -59,9 +53,7 @@
 
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo_livro] . '</td>' .
-                    '<td>' . $registro[$editora] . '</td>' .
-                    '<td>' . $registro[$data_lancamento] . '</td>';
+                echo '<td>' . $registro[$nome_autor] . '</td>' ;
                     /* TODO-4: Adicione a tabela os novos registros. */
                     
                 echo '</tr>';

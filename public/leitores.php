@@ -21,18 +21,18 @@
 
         $conexao = RetornaConexao();
 
-        $nome = 'nome';
-        $cidade = 'cidade';
+        $nome_leitor = 'nome_leitor';
         $idade = 'idade';
+        $email = 'email';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $nome .
-            '     , ' . $cidade .
+            'SELECT ' . $nome_leitor .
             '     , ' . $idade .
+            '     , ' . $email .
+            '  FROM leitores';
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM leitor';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -45,11 +45,11 @@
         $cabecalho =
             '<table>' .
             '    <tr>' .
-            '        <th>' . $nome . '</th>' .
-            '        <th>' . $cidade . '</th>' .
-            /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
+            '        <th>' . $nome_leitor . '</th>' .
             '        <th>' . $idade . '</th>' .
+            '        <th>' . $email . '</th>' .
             '    </tr>';
+            /* TODO-3: Adicione as variaveis ao cabeçalho da tabela */
 
         echo $cabecalho;
 
@@ -59,10 +59,10 @@
 
                 echo '<tr>';
 
-                echo '<td>' . $registro[$nome] . '</td>' .
-                    '<td>' . $registro[$cidade] . '</td>' .
+                echo '<td>' . $registro[$nome_leitor] . '</td>' .
+                    '<td>' . $registro[$idade] . '</td>' .
+                    '<td>' . $registro[$email] . '</td>';
                     /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$idade] . '</td>';
 
                 echo '</tr>';
             }
