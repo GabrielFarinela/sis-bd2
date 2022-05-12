@@ -23,7 +23,7 @@
 
         $titulo_livro = 'titulo_livro';
         $editora = 'editora';
-        $data_lancamento = 'classificacao';
+        $data_lancamento = 'data_lancamento';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
